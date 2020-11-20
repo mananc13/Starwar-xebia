@@ -4,13 +4,13 @@ import { connect } from "react-redux";
 import mapDispatchToProps from "./../../action/login/loginAction";
 
 import "./header.scss";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
-const Header = (props) => {
-  const history = useHistory();
+const Header = props => {
+  // const history = useHistory();
   const { login, setLogin } = props;
   if (!login) {
     return null;
@@ -29,7 +29,7 @@ const Header = (props) => {
             className="btn btn-primary"
             onClick={() => {
               sessionStorage.clear();
-              history.push("/login");
+              // history.push("/login");
               setLogin({ login: false, username: "" });
             }}
           />
@@ -40,7 +40,7 @@ const Header = (props) => {
 };
 
 const mapStateToProps = ({ auth }) => ({
-  login: auth.login,
+  login: auth.login
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
