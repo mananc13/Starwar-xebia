@@ -16,11 +16,11 @@ class Home extends React.Component {
     this.state = {
       containerSize: 210,
       countFunction: 0,
-      seconds: 60
+      seconds: 60,
     };
   }
 
-  getPopulationWiseContainerSize = population => {
+  getPopulationWiseContainerSize = (population) => {
     const numberReg = /^[0-9]+$/;
     if (numberReg.test(population)) {
       this.setState({ containerSize: 210 + 20 * population.length });
@@ -36,7 +36,7 @@ class Home extends React.Component {
       count,
       setSelectedItem,
       selectedItem,
-      error
+      error,
     } = this.props;
     const { containerSize } = this.state;
     return (
@@ -46,29 +46,26 @@ class Home extends React.Component {
           <div className="col-sm-4">
             <h3>Search Planet</h3>
             <Search
-              onChange={a => {
+              onChange={(a) => {
                 if (this.state.countFunction < 1) {
                   this.setState({ countFunction: 1 });
                   setInterval(() => {
                     this.setState(({ seconds }) => ({
-                      seconds: seconds - 1
+                      seconds: seconds - 1,
                     }));
-                    console.log(this.state.seconds, "seconds");
+
                     if (this.state.seconds == 0) {
                       this.setState({ countFunction: 0, seconds: 60 });
                       resetCount();
-                      // console.log(this.state.seconds, "outside");
                     }
                   }, 1000);
-
-                  // console.log(this.state.seconds, "inside");
                 }
 
                 getSearchList(a, count, this.state.countFunction);
               }}
               list={searchList}
               loader={loader}
-              onSelect={item => setSelectedItem(item)}
+              onSelect={(item) => setSelectedItem(item)}
               getPopulationWiseContainerSize={
                 this.getPopulationWiseContainerSize
               }
@@ -87,7 +84,7 @@ class Home extends React.Component {
 
 Home.defaultProps = {
   error: "",
-  searchList: []
+  searchList: [],
 };
 
 Home.propTypes = {
@@ -98,7 +95,7 @@ Home.propTypes = {
   selectedItem: PropTypes.object.isRequired,
   error: PropTypes.string,
   searchCounter: PropTypes.array.isRequired,
-  username: PropTypes.string.isRequired
+  username: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = ({ home, auth }) => ({
@@ -108,7 +105,7 @@ const mapStateToProps = ({ home, auth }) => ({
   selectedItem: home.selectedItem,
   searchCounter: home.searchCounter,
   count: home.count,
-  username: auth.username
+  username: auth.username,
 });
 
 export default connect(mapStateToProps, homeActions)(Home);

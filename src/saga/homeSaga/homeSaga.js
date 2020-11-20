@@ -22,12 +22,11 @@ export function* getSearchList(action) {
         )
       );
     }
-    if (name) {
-      const { results } = yield fetch(url).then(response => response.json());
-      yield put(homeAction.setSearchList({ list: results }));
-      yield put(homeAction.setError(false));
-      yield put(homeAction.setCount(count));
-    }
+
+    const { results } = yield fetch(url).then((response) => response.json());
+    yield put(homeAction.setSearchList({ list: results }));
+    yield put(homeAction.setError(false));
+    yield put(homeAction.setCount(count));
   } catch (e) {
     yield put(homeAction.setError("Internal server error"));
   }
