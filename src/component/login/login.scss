@@ -1,0 +1,19 @@
+.login {
+  width: 500px;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  margin: 32vh auto;
+  transform: translateY(-50%);
+  .error {
+    margin-top: 10px;
+  }
+  .formContainer {
+    .row {
+      margin: 10px;
+    }
+    .loginHead{
+      font-weight: bold;
+    }
+  }
+}
