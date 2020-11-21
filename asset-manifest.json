@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Starwar-xebia/static/css/main.2f6e7198.chunk.css",
+    "main.js": "/Starwar-xebia/static/js/main.620b4a33.chunk.js",
+    "main.js.map": "/Starwar-xebia/static/js/main.620b4a33.chunk.js.map",
+    "runtime~main.js": "/Starwar-xebia/static/js/runtime~main.67fe6bae.js",
+    "runtime~main.js.map": "/Starwar-xebia/static/js/runtime~main.67fe6bae.js.map",
+    "static/js/2.54ce952f.chunk.js": "/Starwar-xebia/static/js/2.54ce952f.chunk.js",
+    "static/js/2.54ce952f.chunk.js.map": "/Starwar-xebia/static/js/2.54ce952f.chunk.js.map",
+    "static/css/3.b883f25b.chunk.css": "/Starwar-xebia/static/css/3.b883f25b.chunk.css",
+    "static/js/3.7bf5347c.chunk.js": "/Starwar-xebia/static/js/3.7bf5347c.chunk.js",
+    "static/js/3.7bf5347c.chunk.js.map": "/Starwar-xebia/static/js/3.7bf5347c.chunk.js.map",
+    "static/css/4.95323df8.chunk.css": "/Starwar-xebia/static/css/4.95323df8.chunk.css",
+    "static/js/4.dfe9343c.chunk.js": "/Starwar-xebia/static/js/4.dfe9343c.chunk.js",
+    "static/js/4.dfe9343c.chunk.js.map": "/Starwar-xebia/static/js/4.dfe9343c.chunk.js.map",
+    "index.html": "/Starwar-xebia/index.html",
+    "precache-manifest.db9431774d32f663203eb6379c741ee3.js": "/Starwar-xebia/precache-manifest.db9431774d32f663203eb6379c741ee3.js",
+    "service-worker.js": "/Starwar-xebia/service-worker.js",
+    "static/css/3.b883f25b.chunk.css.map": "/Starwar-xebia/static/css/3.b883f25b.chunk.css.map",
+    "static/css/4.95323df8.chunk.css.map": "/Starwar-xebia/static/css/4.95323df8.chunk.css.map",
+    "static/css/main.2f6e7198.chunk.css.map": "/Starwar-xebia/static/css/main.2f6e7198.chunk.css.map"
+  }
+}
