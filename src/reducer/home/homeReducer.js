@@ -4,7 +4,7 @@ import {
   SET_SELECTED_ITEM,
   SET_HOME_ERROR,
   SET_COUNT,
-  RESET_COUNT
+  RESET_COUNT,
 } from "./../../action/home/homeAction";
 
 const initialState = {
@@ -12,7 +12,7 @@ const initialState = {
   loader: false,
   selectedItem: {},
   searchCounter: [],
-  count: 0
+  count: 0,
 };
 
 function homeReducer(state = initialState, action) {
@@ -21,35 +21,35 @@ function homeReducer(state = initialState, action) {
       return {
         ...state,
         searchList: action.payload.list,
-        loader: false
+        loader: false,
       };
     case GET_SEARCH_LIST:
       return {
         ...state,
-        loader: true
+        loader: true,
       };
     case SET_COUNT:
       return {
         ...state,
 
-        count: action.payload.count + 1
+        count: action.payload.count + 1,
       };
     case RESET_COUNT:
       return {
         ...state,
         error: false,
-        count: 0
+        count: 0,
       };
     case SET_SELECTED_ITEM:
       return {
         ...state,
-        selectedItem: action.payload.item
+        selectedItem: action.payload.item,
       };
     case SET_HOME_ERROR:
       return {
         ...state,
         error: action.payload.message,
-        loader: false
+        loader: false,
       };
     default:
       return state;

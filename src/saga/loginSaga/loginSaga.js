@@ -1,7 +1,7 @@
 import { put, takeLatest } from "redux-saga/effects";
 
 import loginAction, {
-  GET_LOGIN_DETAIL
+  GET_LOGIN_DETAIL,
 } from "./../../action/login/loginAction";
 
 import { PEOPLE_URL } from "./../../general/util/constant";
@@ -12,7 +12,7 @@ export function* getLoginDetail(action) {
   yield put(loginAction.setLoader(true));
   const url = `${PEOPLE_URL}?search=${username}`;
   try {
-    const response = yield fetch(url).then(response => response.json());
+    const response = yield fetch(url).then((response) => response.json());
 
     JSON.stringify(sessionStorage.setItem("loggedInUser", username));
     const { results } = response;

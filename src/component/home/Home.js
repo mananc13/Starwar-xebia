@@ -8,7 +8,6 @@ import Error from "./../error/Error";
 import homeActions from "../../action/home/homeAction";
 
 import "./home.scss";
-import Header from "../header/Header";
 
 class Home extends React.Component {
   constructor(props) {
@@ -17,6 +16,7 @@ class Home extends React.Component {
       containerSize: 210,
       countFunction: 0,
       seconds: 60,
+      inputSearchValue: false,
     };
   }
 
@@ -39,6 +39,9 @@ class Home extends React.Component {
       error,
     } = this.props;
     const { containerSize } = this.state;
+
+    const { inputSearchValue } = this.state;
+
     return (
       <div className="container box">
         <div className="row search">
@@ -47,6 +50,9 @@ class Home extends React.Component {
             <h3>Search Planet</h3>
             <Search
               onChange={(a) => {
+                if (!a) {
+                  setSelectedItem({});
+                }
                 if (this.state.countFunction < 1) {
                   this.setState({ countFunction: 1 });
                   setInterval(() => {
@@ -54,28 +60,47 @@ class Home extends React.Component {
                       seconds: seconds - 1,
                     }));
 
-                    if (this.state.seconds == 0) {
+                    if (this.state.seconds === 0) {
                       this.setState({ countFunction: 0, seconds: 60 });
                       resetCount();
                     }
                   }, 1000);
                 }
-
+                this.setState({ inputSearchValue: a });
                 getSearchList(a, count, this.state.countFunction);
               }}
               list={searchList}
               loader={loader}
-              onSelect={(item) => setSelectedItem(item)}
+              onSelect={(item) => {
+                setSelectedItem(item);
+                this.setState({ inputSearchValue: selectedItem });
+              }}
               getPopulationWiseContainerSize={
                 this.getPopulationWiseContainerSize
               }
             />
           </div>
-          <div className="col-sm-8">
-            <div style={{ height: containerSize }} className="detail">
-              <Detail {...selectedItem} />
+          {inputSearchValue &&
+          searchList.length &&
+          Object.keys(selectedItem).length !== 0 ? (
+            <div className="col-sm-8">
+              <div style={{ height: containerSize }} className="detail">
+                <Detail {...selectedItem} />
+              </div>
             </div>
-          </div>
+          ) : !loader && inputSearchValue && !searchList.length ? (
+            <div className="col-sm-8">
+              <div style={{ height: "100px", padding: "20px" }}>
+                <h2>No Result Found</h2>
+              </div>
+            </div>
+          ) : (
+            <div className="col-sm-8">
+              <div style={{ height: "100px", padding: "20px" }}>
+                <h2>Planet Details To Be Displayed</h2>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );

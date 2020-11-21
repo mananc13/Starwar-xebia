@@ -1,4 +1,4 @@
-import { put, takeLatest, debounce } from "redux-saga/effects";
+import { put, debounce } from "redux-saga/effects";
 
 import homeAction from "./../../action/home/homeAction";
 import { GET_SEARCH_LIST } from "./../../action/home/homeAction";
@@ -14,7 +14,7 @@ export function* getSearchList(action) {
     if (
       count > 14 &&
       countFunction > 0 &&
-      sessionStorage.getItem("loggedInUser") != "Luke Skywalker"
+      sessionStorage.getItem("loggedInUser") !== "Luke Skywalker"
     ) {
       return yield put(
         homeAction.setError(
