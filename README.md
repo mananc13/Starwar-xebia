@@ -82,3 +82,19 @@ Whenever Error Occurs, Error Component displays the Error.
 ### Loader Component
 
 Displays Loader.
+
+### Execution of Application
+
+On Load of the application, the login page is displayed. Enter the credentials as mentioned above to successfully login.
+
+The user will land onto Home Page ( handled using Route in React ) which has a search bar to search the planents and the section on right will display the details of the planet.
+
+Search the Planet. It will display a list of Planets Available and on selection of Planet, Its details will be displayed with the div size increasing relative to the population of planet.
+
+On Search if no planet is displayed in the list, then "No Result Found" text message will be displayed.
+
+If the search box is empty, then "Planet Details To Be Displayed" text will be displayed.
+
+A logout Button is displayed for the user to successfully logout of the application.
+
+On reloading of screen, the user stays on the same page which has been handled using sessionStorage.
