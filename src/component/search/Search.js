@@ -9,6 +9,7 @@ class Search extends React.Component {
   /**
    * @description to get dropdown list
    */
+
   getList = (e) => {
     const { onChange } = this.props;
     onChange(e.target.value);
