@@ -23,8 +23,8 @@ const Header = (props) => {
             value={"Logout"}
             className="btn btn-primary"
             onClick={() => {
-              sessionStorage.clear();
               setLogin({ login: false, username: "" });
+              sessionStorage.clear();
             }}
           />
         </div>

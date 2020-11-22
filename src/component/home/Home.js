@@ -118,7 +118,6 @@ Home.propTypes = {
   loader: PropTypes.bool.isRequired,
   setSelectedItem: PropTypes.func.isRequired,
   selectedItem: PropTypes.object.isRequired,
-  error: PropTypes.string,
   searchCounter: PropTypes.array.isRequired,
   username: PropTypes.string.isRequired,
 };
