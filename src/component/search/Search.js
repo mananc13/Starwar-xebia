@@ -54,7 +54,7 @@ class Search extends React.Component {
           type="search"
           className="form-control mdb-autocomplete"
           onChange={this.getList}
-          value={value}
+          // value={value}
           onFocus={() => this.toggleList(true)}
           placeholder="search"
         />
