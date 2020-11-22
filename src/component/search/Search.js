@@ -46,7 +46,7 @@ class Search extends React.Component {
 
   render() {
     const { list, loader, onSelect } = this.props;
-    const { value, showList } = this.state;
+    const { showList } = this.state;
     return (
       <div className="col-sm-12 autocomplete">
         {loader && <span className="loader" />}
@@ -54,7 +54,6 @@ class Search extends React.Component {
           type="search"
           className="form-control mdb-autocomplete"
           onChange={this.getList}
-          value={value}
           onFocus={() => this.toggleList(true)}
           placeholder="search"
         />
